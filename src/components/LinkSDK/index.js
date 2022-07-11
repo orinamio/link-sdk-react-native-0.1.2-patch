@@ -162,7 +162,7 @@ const LinkSDK = forwardRef((props, ref) => {
             <WebView
                 {...props.webViewProps}
                 ref={SDK}
-                style={styles.WebView}
+                style={[styles.WebView, props.webViewProps?.style || {}]}
                 originWhitelist={['*']}
                 source={{ baseUrl: "https://leantech.me", html: require('./base.js')(props.version) }}
                 onShouldStartLoadWithRequest={event => {
